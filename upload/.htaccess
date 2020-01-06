@@ -1,0 +1,20 @@
+<Files *>
+SetHandler None
+</Files>
+
+<Files *.php>
+deny from all
+</Files>
+
+<Files *.html>
+deny from all
+</Files>
+
+<Files *.js>
+deny from all
+</Files>
+
+<Files *.cgi>
+deny from all
+</Files>
+  	  
