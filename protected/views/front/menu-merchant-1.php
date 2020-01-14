@@ -33,24 +33,24 @@ dump($merchant_tax);*/
      <?php foreach ($val['item'] as $val_item):?>
      
      <?php 
-	    $atts='';
-	    /*if ( $val_item['single_item']==2){
-	  	  $atts.='data-price="'.$val_item['single_details']['price'].'"';
-	  	  $atts.=" ";
-	  	  $atts.='data-size="'.$val_item['single_details']['size'].'"';
-	    }*/
-	    if ( $val_item['single_item']==2){
-			  $atts.='data-price="'.$val_item['single_details']['price'].'"';
-			  $atts.=" ";
-			  $atts.='data-size="'.$val_item['single_details']['size'].'"';
-			  $atts.=" ";
-			  if(isset($val_item['single_details']['size_id'])){
-			     $atts.='data-size_id="'.$val_item['single_details']['size_id'].'"';
-			  }
-			  $atts.=" ";
-			  $atts.='data-discount="'.$val_item['discount'].'"';
-		}
-	  ?>       
+      $atts='';
+      /*if ( $val_item['single_item']==2){
+        $atts.='data-price="'.$val_item['single_details']['price'].'"';
+        $atts.=" ";
+        $atts.='data-size="'.$val_item['single_details']['size'].'"';
+      }*/
+      if ( $val_item['single_item']==2){
+        $atts.='data-price="'.$val_item['single_details']['price'].'"';
+        $atts.=" ";
+        $atts.='data-size="'.$val_item['single_details']['size'].'"';
+        $atts.=" ";
+        if(isset($val_item['single_details']['size_id'])){
+           $atts.='data-size_id="'.$val_item['single_details']['size_id'].'"';
+        }
+        $atts.=" ";
+        $atts.='data-discount="'.$val_item['discount'].'"';
+    }
+    ?>       
      
      <div class="row <?php echo $x%2?'odd':'even'?>">
         <div class="col-md-7 col-xs-7 border">
@@ -64,7 +64,7 @@ dump($merchant_tax);*/
         <div class="col-md-1 col-xs-1 relative food-price-wrap border">
           <?php if ( $disabled_addcart==""):?>
           
-          <a href="javascript:;" class="dsktop menu-item <?php echo $val_item['not_available']==2?"item_not_available":''?>" 
+          <a href="javascript:;" class="menu-item <?php echo $val_item['not_available']==2?"item_not_available":''?>" 
             rel="<?php echo $val_item['item_id']?>"
             data-single="<?php echo $val_item['single_item']?>" 
             <?php echo $atts;?>
@@ -72,7 +72,7 @@ dump($merchant_tax);*/
            >
            <i class="ion-ios-plus-outline green-color bold"></i>
           </a>
-         
+         <!--
           <a href="javascript:;" class="mbile menu-item <?php echo $val_item['not_available']==2?"item_not_available":''?>" 
             rel="<?php echo $val_item['item_id']?>"
             data-single="<?php echo $val_item['single_item']?>" 
@@ -81,6 +81,7 @@ dump($merchant_tax);*/
            >
            <i class="ion-ios-plus-outline green-color bold"></i>
           </a>
+        -->
           
           <?php endif;?>
         </div>
